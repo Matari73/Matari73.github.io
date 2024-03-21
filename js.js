@@ -5,7 +5,15 @@ document.querySelector('button').addEventListener('click', function () {
 
     fetch(`https://swapi.dev/api/${opcao}/?search=${input}`)
         .then((resp) => resp.json())
-        .then((data) => console.log(data))
-    
+        .then((data) => {
+            console.log(data)
+            document.querySelector('.lista').innerHTML = '';
+
+            data.results.forEach((item) => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name}`
+                document.querySelector('.lista').appendChild(li);
+            });
+        })
     
 })
