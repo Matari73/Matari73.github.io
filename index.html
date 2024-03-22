@@ -4,18 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Star Wars</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:#19a019;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        select, input[type="text"] {
+            width: calc(100% - 110px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width:300px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #19a019;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #75934e;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+            margin-bottom: 5px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        li:hover {
+            background-color: #eaeaea;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Star Wars</h1>
-    <select name="select">
-        <option value="people" selected>people</option>
-        <option value="planets">planets</option>
-        <option value="starships">starships</option>
-    </select>
-    <input type="text" name="name" placeholder="Digite o nome"/>
-    <button>Pesquisar</button>
-    <ul class="lista"></ul>
+    <div class="container">
+        <h1>Star Wars</h1>
+        <select name="select">
+            <option value="people" selected>people</option>
+            <option value="planets">planets</option>
+            <option value="starships">starships</option>
+        </select>
+        <input type="text" name="name" placeholder="Digite o nome"/>
+        <button>Pesquisar</button>
+        <ul class="lista"></ul>
+    </div>
+    
 
-    <script src="js.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
