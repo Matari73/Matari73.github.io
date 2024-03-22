@@ -8,26 +8,40 @@ document.querySelector('button').addEventListener('click', function () {
             .then((resp) => resp.json())
             .then((data) => {
                 console.log(data)
-                document.querySelector('.lista').innerHTML = '';
+                const lista = document.querySelector('.lista');
+                lista.innerHTML = ''; 
+
                 if (data.count >= 1) {
                     data.results.forEach((item) => {
-                        createLi(`${item.name}`)
+                        createDiv(item);
                     });
                 }
                 else {
-                    createLi("Nenhum item encontrado")
+                    erro("Nenhum item encontrado")
                 }
             })
     } catch (error) {
-        createLi(error)
+        erro(error)
     }
-
-
 })
 
+function createDiv(item) {
+    const div = document.createElement('div');
+    div.classList.add('item'); 
+    propDesejadas = ["name", "height", "mass", "hair_color", "skin_color", "eye_color", "gender"] 
 
-function createLi(mensagem) {
-    const li = document.createElement('li');
-    li.textContent = `${mensagem}`
-    document.querySelector('.lista').appendChild(li);
+    for (const [key, value] of Object.entries(item)) {
+        if (propDesejadas.includes(key)) {
+            const propertyDiv = document.createElement('div');
+            propertyDiv.textContent = `${key}: ${value}`;
+            div.appendChild(propertyDiv);
+        }
+    }
+    document.querySelector('.lista').appendChild(div);
+}
+
+function erro(mensagem) {
+    const div = document.createElement('div');
+    div.innerText=`${mensagem}`; 
+    document.querySelector('.lista').appendChild(div);
 }
