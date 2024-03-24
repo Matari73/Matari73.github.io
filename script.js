@@ -29,11 +29,7 @@ document.querySelector('button').addEventListener('click', function () {
                                 break
                             default:
                                 break;
-                        }
-                        // if(opcao == "people"){
-                        //     console.log(item)
-                        //     createDivPeople(item);
-                        // }       
+                        }    
                     });
                 }
                 else {
